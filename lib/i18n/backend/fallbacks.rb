@@ -52,7 +52,7 @@ module I18n
         options.delete(:fallback)
 
         return super(locale, nil, options.merge(:default => default)) if default
-        raise(I18n::MissingTranslationData.new(locale, key, options))
+        # raise(I18n::MissingTranslationData.new(locale, key, options))
       end
 
       def extract_string_or_lambda_default!(options)

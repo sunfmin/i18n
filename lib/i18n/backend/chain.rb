@@ -57,7 +57,7 @@ module I18n
           end
 
           return namespace if namespace
-          raise(I18n::MissingTranslationData.new(locale, key, options))
+          # raise(I18n::MissingTranslationData.new(locale, key, options))
         end
 
         def localize(locale, object, format = :default, options = {})
@@ -67,7 +67,7 @@ module I18n
             rescue MissingTranslationData
             end
           end
-          raise(I18n::MissingTranslationData.new(locale, format, options))
+          # raise(I18n::MissingTranslationData.new(locale, format, options))
         end
 
         protected

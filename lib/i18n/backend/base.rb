@@ -38,8 +38,8 @@ module I18n
           entry = entry.nil? && default ?
             default(locale, key, default, options) : resolve(locale, key, entry, options)
         end
-
-        raise(I18n::MissingTranslationData.new(locale, key, options)) if entry.nil?
+        return nil if entry.nil?
+        # raise(I18n::MissingTranslationData.new(locale, key, options)) if entry.nil?
         entry = entry.dup if entry.is_a?(String)
 
         entry = pluralize(locale, entry, count) if count
